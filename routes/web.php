@@ -24,3 +24,7 @@ Route::get('/menu', function () {
 Route::get('/about', function () {
     return view('about');
 });
+
+Route::get('/book', function () {
+    return view('book');
+});
