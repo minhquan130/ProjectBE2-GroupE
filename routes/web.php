@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KfoodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,22 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [KfoodController::class, 'index']);
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+Route::get('/menu', [KfoodController::class, 'menu']);
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [KfoodController::class, 'about']);
 
-Route::get('/book', function () {
-    return view('book');
-});
+Route::get('/book', [KfoodController::class, 'book']);
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [KfoodController::class, 'cart']);
