@@ -21,22 +21,35 @@
 
       <div class="filters-content">
         <div class="row grid">
+          @isset($foods)
+          @foreach ($foods as $foods)
+              
+          
           <div class="col-sm-6 col-lg-4 all pizza">
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/f1.png" alt="">
+                  <img src="images/{{ $foods->image }}" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
-                    Delicious Pizza
+                    {{ $foods->name }}
                   </h5>
-                  <p>
-                    Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam voluptatem repellendus sed eaque
+                  <p style="display: block;
+                  display: -webkit-box;
+                  max-width: 100%;
+                  height: 43px;
+                  margin: 0 auto;
+                  line-height: 1.5;
+                  -webkit-line-clamp: 3;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  text-overflow: ellipsis;">
+                    {{ $foods->description }}
                   </p>
                   <div class="options">
                     <h6>
-                      $20
+                      {{ number_format($foods->price) }} VNĐ
                     </h6>
                     <a href="">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -97,7 +110,10 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-4 all burger">
+
+          @endforeach
+          @endisset
+          {{-- <div class="col-sm-6 col-lg-4 all burger">
             <div class="box">
               <div>
                 <div class="img-box">
@@ -704,7 +720,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
       </div>
       <div class="btn-box">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KfoodController;
+use App\Http\Controllers\FoodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::get('/about', [KfoodController::class, 'about']);
 Route::get('/book', [KfoodController::class, 'book']);
 
 Route::get('/cart', [KfoodController::class, 'cart']);
+
+Route::get('/food', [FoodController::class, 'index']);
+
