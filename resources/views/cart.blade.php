@@ -32,7 +32,22 @@
                     </tr>
 
                     <!-- Sản Phẩm -->
-                    <tr>
+                    @isset($carts)
+                      @foreach ($carts as $cart)
+                      {{ $count += $cart->count }}
+                      {{ $total += $cart->price *  $cart->count}}
+                      <tr>
+                        <td><img src="./images/{{ $cart->image }}" alt="food1" style="height: 100px"></td>
+                        <td>{{ $cart->name }}</td>
+                        <td>{{ $cart->price }}</td>
+                        <td><input type="number" name="qty" id="qty" value="{{ $cart->count }}" style="text-align: center;"></td>
+                        <td>{{ number_format($cart->price *  $cart->count) }} VNĐ</td>
+                        <td><button style="background-color: red; color: #fff; font-weight: bold;">X</button></td>
+                      </tr>
+                      @endforeach
+                    @endisset
+                    
+                    {{-- <tr>
                       <td><img src="./images/f1.png" alt="food1" style="height: 100px"></td>
                       <td>Hamburger</td>
                       <td>$20</td>
@@ -47,15 +62,7 @@
                       <td><input type="number" name="qty" id="qty" value="4" style="text-align: center;"></td>
                       <td>$80</td>
                       <td><button style="background-color: red; color: #fff; font-weight: bold;">X</button></td>
-                    </tr>
-                    <tr>
-                      <td><img src="./images/f1.png" alt="food1" style="height: 100px"></td>
-                      <td>Hamburger</td>
-                      <td>$20</td>
-                      <td><input type="number" name="qty" id="qty" value="4" style="text-align: center;"></td>
-                      <td>$80</td>
-                      <td><button style="background-color: red; color: #fff; font-weight: bold;">X</button></td>
-                    </tr>
+                    </tr> --}}
                   </table>
                 </div>
 
@@ -67,12 +74,12 @@
 
                     <tr style="padding: 15px 0;">
                       <td>Tổng Sản Phẩm: </td>
-                      <td><p>12</p></td>
+                      <td><p>{{ $count }}</p></td>
                     </tr>
 
                     <tr style="padding: 15px 0;">
                       <td>Tổng Tiền: </td>
-                      <td><p style="font-weight: bold">$240</p></td>
+                      <td><p style="font-weight: bold"> {{ number_format($total) }} VNĐ</p></td>
                     </tr>
 
                   </table>

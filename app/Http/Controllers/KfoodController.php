@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\DanhMuc;
 use App\Models\Food;
+use App\Models\Cart;
+use DB;
 
 class KfoodController extends Controller
 {
@@ -13,12 +15,12 @@ class KfoodController extends Controller
         
          # code...
          $foods = Food::all();
-         $menu = true;
+         $index = true;
          $types = DanhMuc::all();
          // dd($foods);
          return view('index', [
              'foods' => $foods,
-             'menu' => $menu,
+             'index' => $index,
              'types' => $types,
          ]);
     }
@@ -50,6 +52,18 @@ class KfoodController extends Controller
 
     public function cart()
     {
-        return view('cart');
+        # code...
+        
+        $carts = DB::select('SELECT * FROM food, carts WHERE food.id = carts.id');
+        $cart = true;
+        $total = 0;
+        $count = 0;
+        // dd($foods);
+        return view('cart', [
+            'carts' => $carts,
+            'cart' => $cart,
+            'total' => $total,
+            'count' => $count,
+        ]);
     }
 }
