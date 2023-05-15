@@ -27,3 +27,4 @@ Route::get('/cart', [KfoodController::class, 'cart']);
 
 Route::get('/food', [FoodController::class, 'index']);
 
+
