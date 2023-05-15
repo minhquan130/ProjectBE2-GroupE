@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
+use App\Models\DanhMuc;
 
 
 class FoodController extends Controller
@@ -14,10 +15,12 @@ class FoodController extends Controller
         # code...
         $foods = Food::all();
         $menu = true;
+        $types = DanhMuc::all();
         // dd($foods);
         return view('menu', [
             'foods' => $foods,
             'menu' => $menu,
+            'types' => $types,
         ]);
     }
 }
