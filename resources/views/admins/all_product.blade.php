@@ -42,7 +42,7 @@
               <tr>
                 <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                 <td>{{ $item->product_name }}</td>
-                <td>{{ $item->product_price }}</td>
+                <td>{{ number_format($item->product_price) }} VNĐ</td>
                 <td><img src="uploads/product/{{ $item->product_image }}" alt="category" style="height: 100px; width: 100px"></td>
                 <td>{{ $item->name_type }}</td>
                 <td>{{ $item->product_status }}</td>

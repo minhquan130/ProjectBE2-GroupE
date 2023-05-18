@@ -20,7 +20,7 @@
                 <div class="col-md-8 cart_content_left">
                   <table border="1" style="width: 100%; text-align: center;">
                     <tr>
-                      <th colspan="6" style="background-color: crimson; color: #fff; font-size: 30px;">Giỏ Hàng</th>
+                      <th colspan="7" style="background-color: crimson; color: #fff; font-size: 30px;">Giỏ Hàng</th>
                     </tr>
                     <tr>
                       <th>Hình</th>
@@ -28,21 +28,33 @@
                       <th>Giá</th>
                       <th>Số Lượng</th>
                       <th>Thành Tiền</th>
+                      <th>Sửa</th>
                       <th>Xóa</th>
                     </tr>
 
                     <!-- Sản Phẩm -->
+                    @php
+                        $total = 0;
+                        $count = 0;
+                    @endphp
                     @isset($carts)
                       @foreach ($carts as $cart)
-                      {{ $count += $cart->count }}
-                      {{ $total += $cart->price *  $cart->count}}
+                      @php
+                        $total += $cart->total;
+                        $count += $cart->count;
+                      @endphp
                       <tr>
-                        <td><img src="./images/{{ $cart->image }}" alt="food1" style="height: 100px"></td>
-                        <td>{{ $cart->name }}</td>
-                        <td>{{ $cart->price }}</td>
-                        <td><input type="number" name="qty" id="qty" value="{{ $cart->count }}" style="text-align: center;"></td>
-                        <td>{{ number_format($cart->price *  $cart->count) }} VNĐ</td>
-                        <td><button style="background-color: red; color: #fff; font-weight: bold;">X</button></td>
+                        <td><img src="./uploads/product/{{ $cart->product_image }}" alt="food1" style="height: 100px; width: 100px"></td>
+                        <td>{{ $cart->product_name }}</td>
+                        <td>{{ number_format($cart->product_price) }} VNĐ</td>
+                        <form action="/edit-cart/{{ $cart->cart_id }}" method="get">
+                        <td><input min="1" type="number" name="qty" id="qty" value="{{ $cart->count }}" style="text-align: center; width: 50px;"></td>
+                        <input type="hidden" name="product_id" value="{{$cart->id}}">
+                        <td>{{ number_format($cart->product_price *  $cart->count) }} VNĐ</td>
+                          <td><button type="submit" style="background-color: green; color: #fff; ; font-weight: bold; border-radius: 5px"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></td>
+                        </form>
+
+                        <td><a href="/delete-cart/{{ $cart->cart_id }}"><button style="background-color: red; color: #fff; font-weight: bold; border-radius: 5px"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a></td>
                       </tr>
                       @endforeach
                     @endisset

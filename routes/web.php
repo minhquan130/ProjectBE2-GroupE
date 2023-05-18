@@ -25,7 +25,12 @@ Route::get('/about', [KfoodController::class, 'about']);
 
 Route::get('/book', [KfoodController::class, 'book']);
 
+// Cart
 Route::get('/cart', [KfoodController::class, 'cart']);
+Route::get('/add-cart/{cart_id}/{page}', [KfoodController::class, 'add_or_edit_cart']);
+Route::get('/delete-cart/{cart_id}', [KfoodController::class, 'delete_cart']);
+Route::get('/edit-cart/{cart_id}', [KfoodController::class, 'edit_cart']);
+
 
 Route::get('/food', [FoodController::class, 'index']);
 

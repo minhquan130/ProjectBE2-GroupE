@@ -102,6 +102,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{ asset('/all-category-product') }}">Danh Mục</a></li>
                     </ul>
                 </li>
+
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                        <span>User</span>
+                    </a>
+                    <ul class="sub">
+						<li><a href="{{ asset('/all-product') }}">Khách Hàng</a></li>
+                    </ul>
+                </li>
                 
             </ul>            </div>
         <!-- sidebar menu end-->

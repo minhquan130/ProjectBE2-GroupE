@@ -23,19 +23,19 @@
       <div class="filters-content">
         <div class="row grid">
           @isset($foods)
-          @foreach ($foods as $foods)
+          @foreach ($foods as $food)
               
           
-          <div class="col-sm-6 col-lg-4 all {{ strtolower($foods->name_type) }}">
+          <div class="col-sm-6 col-lg-4 all {{ strtolower($food->name_type) }}">
             
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/{{ $foods->image }}" alt="">
+                  <img src="uploads/product/{{ $food->product_image }}" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>
-                    {{ $foods->name }}
+                    {{ $food->product_name }}
                   </h5>
                   <p style="display: block;
                   display: -webkit-box;
@@ -47,13 +47,13 @@
                   -webkit-box-orient: vertical;
                   overflow: hidden;
                   text-overflow: ellipsis;">
-                    {{ $foods->description }}
+                    {{ $food->product_desc }}
                   </p>
                   <div class="options">
                     <h6>
-                      {{ number_format($foods->price) }} VNĐ
+                      {{ number_format($food->product_price) }} VNĐ
                     </h6>
-                    <a href="">
+                    <a href="/add-cart/{{ $food->product_id }}/menu">
                       <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                         <g>
                           <g>
