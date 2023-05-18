@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('danh_mucs', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',100);
-            $table->string('img',100);
+            $table->increments('id_category');
+            $table->string('name_type',100);
+            $table->string('img_category',100);
         });
     }
 

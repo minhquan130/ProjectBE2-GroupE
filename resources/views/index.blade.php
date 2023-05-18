@@ -384,7 +384,7 @@
         <li class="active" data-filter="*">All</li>
         @isset($types)
         @foreach($types as $type)
-        <li data-filter=".{{ $type->name }}">{{ $type->name }}</li>
+        <li data-filter=".{{ strtolower($type->name_type) }}">{{ $type->name_type }}</li>
         @endforeach
         @endisset
         

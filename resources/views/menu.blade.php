@@ -15,7 +15,7 @@
         <li class="active" data-filter="*">All</li>
         @isset($types)
         @foreach($types as $type)
-        <li data-filter=".{{ $type->name }}">{{ $type->name }}</li>
+        <li data-filter=".{{ strtolower($type->name_type) }}">{{ $type->name_type }}</li>
         @endforeach
         @endisset
       </ul>
@@ -26,7 +26,8 @@
           @foreach ($foods as $foods)
               
           
-          <div class="col-sm-6 col-lg-4 all pizza">
+          <div class="col-sm-6 col-lg-4 all {{ strtolower($foods->name_type) }}">
+            
             <div class="box">
               <div>
                 <div class="img-box">

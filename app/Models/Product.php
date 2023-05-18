@@ -4,14 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use DB;
 
-class DanhMuc extends Model
+class Product extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'type_id',
-        'name_type',
-        'img',
-    ];
 }

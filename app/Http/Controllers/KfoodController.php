@@ -29,7 +29,7 @@ class KfoodController extends Controller
     {
         
         # code...
-        $foods = Food::all();
+        $foods = DB::select('SELECT * FROM `danh_mucs`, `food` WHERE `danh_mucs`.`id` = `food`.`type_id`');
         $menu = true;
         $types = DanhMuc::all();
         // dd($foods);
