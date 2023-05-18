@@ -45,9 +45,11 @@
                 <input type="date" class="form-control">
               </div>
               <div class="btn_box">
+                <a href="">
                 <button>
                   Book Now
                 </button>
+              </a>
               </div>
             </form>
           </div>

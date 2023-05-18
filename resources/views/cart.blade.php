@@ -97,7 +97,11 @@
                   </table>
                   <div class="cart_content_right_button" style="text-align: center;">
                     <a href="/menu"><button style="background-color: #000; color: #fff; border-radius: 5px; font-weight: bold; padding: 5px;">Tiếp Tục Mua Sắm</button></a>
-                    <a href="/login-checkout"><button style="background-color: #fff; color: #000; border-radius: 5px; font-weight: bold; padding: 5px;">Thanh Toán</button></a>
+                    @guest 
+                    <a href="/login"><button style="background-color: #fff; color: #000; border-radius: 5px; font-weight: bold; padding: 5px;">Thanh Toán</button></a>
+                    @else
+                    <a href="/book"><button style="background-color: #fff; color: #000; border-radius: 5px; font-weight: bold; padding: 5px;">Thanh Toán</button></a>
+                    @endguest
                   </div>
                 </div>
               </div>

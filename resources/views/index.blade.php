@@ -63,10 +63,7 @@
                 <a class="nav-link" href="about">About</a>
               </li>
             </ul>
-            <div class="user_option">
-              <a href="" class="user_link">
-                <i class="fa fa-user" aria-hidden="true"></i>
-              </a>
+            <div class="user_option">     
               <a class="cart_link" href="/cart">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                   <g>
@@ -121,11 +118,25 @@
                   </g>
                 </svg>
               </a>
+              
               <form class="form-inline">
                 <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
+
+              @guest
+              <a href="login" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Đăng Nhập
+              </a>
+              
+              @else
+              <a href="signout" class="user_link">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Đăng Xuất
+              </a>
+              @endguest
             </div>
           </div>
         </nav>
