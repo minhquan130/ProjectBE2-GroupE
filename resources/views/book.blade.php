@@ -12,44 +12,42 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form_container">
-            <form action="">
+            <form action="delete-all-row-cart">
               <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
+                <input type="text" name="customer_name" class="form-control" placeholder="Your Name" />
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
+                <input type="text" name="customer_phone" class="form-control" placeholder="Phone Number" />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
+                <input type="email" name="customer_email" class="form-control" placeholder="Your Email" />
               </div>
               <div>
-                <select class="form-control nice-select wide">
+                <select name="customer_count" class="form-control nice-select wide">
                   <option value="" disabled selected>
                     How many persons?
                   </option>
-                  <option value="">
+                  <option value="1">
                     2
                   </option>
-                  <option value="">
+                  <option value="2">
                     3
                   </option>
-                  <option value="">
+                  <option value="3">
                     4
                   </option>
-                  <option value="">
+                  <option value="4">
                     5
                   </option>
                 </select>
               </div>
               <div>
-                <input type="date" class="form-control">
+                <input type="date" name="customer_date" class="form-control">
               </div>
               <div class="btn_box">
-                <a href="">
                 <button>
                   Book Now
                 </button>
-              </a>
               </div>
             </form>
           </div>

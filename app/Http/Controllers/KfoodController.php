@@ -119,4 +119,24 @@ class KfoodController extends Controller
         $new_cart = DB::table('carts')->where('cart_id', $cart_id)->update($data);
         return redirect::to('/cart');
     }
+
+    public function delete_all_row_cart(Request $request)
+    {
+        # code...
+        // dd($request);
+        if($request->customer_name){
+            if($request->customer_phone){
+                if($request->customer_email){
+                    if($request->customer_count){
+                        if($request->customer_date){
+                            $cart = DB::table('carts')->delete();
+                            return redirect::to('/');
+                        }
+                    }
+                }
+            }
+        }
+        
+        return redirect::to('book');
+    }
 }
