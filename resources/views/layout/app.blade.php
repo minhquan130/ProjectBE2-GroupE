@@ -69,11 +69,6 @@
               @endisset">
                 <a class="nav-link" href="about">About <span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item @isset($book)
-              active
-              @endisset">
-                <a class="nav-link" href="book">Book Table <span class="sr-only">(current)</span></a>
-              </li>
             </ul>
             <div class="user_option">
               <a href="" class="user_link">
@@ -138,9 +133,6 @@
                   <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
-              <a href="" class="order_online">
-                Order Online
-              </a>
             </div>
           </div>
         </nav>
